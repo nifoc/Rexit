@@ -143,7 +143,7 @@ mod tests {
 
         client.login(username, password).await;
 
-        let rooms = super::super::download_rooms(&client, true);
+        let rooms = super::super::download_rooms(&client, true, false);
 
         let _messages = super::list_messages(&client, rooms.await[1].clone().id, true, false).await;
     }

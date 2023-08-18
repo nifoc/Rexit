@@ -57,6 +57,7 @@
             ] ++ lib.optionals isDarwin (with pkgs.darwin.apple_sdk.frameworks; [
               CoreFoundation
               CoreServices
+              Security
             ]);
 
             packages = with pkgs; [
