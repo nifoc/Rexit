@@ -37,7 +37,7 @@ pub fn new_client(debug: bool) -> Client {
     if debug {
         client = reqwest::Client::builder()
             .cookie_store(true)
-            .timeout(std::time::Duration::from_secs(60))
+            .timeout(std::time::Duration::from_secs(300))
             .danger_accept_invalid_certs(true) // Used in development to trust a proxy
             .user_agent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.5615.121 Safari/537.36")
             .build()
@@ -45,7 +45,7 @@ pub fn new_client(debug: bool) -> Client {
     } else {
         client = reqwest::Client::builder()
             .cookie_store(true)
-            .timeout(std::time::Duration::from_secs(60))
+            .timeout(std::time::Duration::from_secs(300))
             .user_agent("Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.5615.121 Safari/537.36")
             .build()
             .expect("Error making Reqwest Client");
